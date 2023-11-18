@@ -1,4 +1,4 @@
-package com.example.studentregistrationapp.viewModel;
+package com.example.studentregistrationapp.data.viewModel;
 
 import android.app.Application;
 
@@ -8,7 +8,7 @@ import androidx.lifecycle.LiveData;
 
 import com.example.studentregistrationapp.data.model.Admin;
 import com.example.studentregistrationapp.data.model.Student;
-import com.example.studentregistrationapp.repository.AdminRepository;
+import com.example.studentregistrationapp.data.repository.AdminRepository;
 
 import java.util.List;
 

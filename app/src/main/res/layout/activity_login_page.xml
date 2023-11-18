@@ -22,7 +22,8 @@
         android:textStyle="bold" />
     <EditText
         android:id="@+id/username"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
+        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
         android:background="#50ffffff"
         android:layout_below="@+id/signuplogo"
@@ -36,7 +37,8 @@
         />
     <EditText
         android:id="@+id/passwordtext"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
+        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
         android:background="#50ffffff"
         android:layout_below="@+id/username"

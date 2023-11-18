@@ -6,23 +6,29 @@ import androidx.lifecycle.ViewModelProvider;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.studentregistrationapp.databinding.ActivityMainBinding;
-import com.example.studentregistrationapp.viewModel.AdminViewModel;
+import com.example.studentregistrationapp.databinding.ActivityLoginPageBinding;
+import com.example.studentregistrationapp.data.viewModel.AdminViewModel;
 
 public class MainActivity extends AppCompatActivity {
-    private ActivityMainBinding binding;
-    AdminViewModel adminViewModel;
-
+    private ActivityLoginPageBinding binding;
+    AdminViewModel avm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        View view = binding.getRoot();
-        setContentView(view);
+        binding = ActivityLoginPageBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        adminViewModel = new ViewModelProvider(this).get(AdminViewModel.class);
+        avm = new ViewModelProvider(this).get(AdminViewModel.class);
 
+        binding.loginButton.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String username = binding.username.getText().toString();
+                        String password = binding.passwordtext.getText().toString();
 
-        binding.fab
+                    }
+                }
+        );
     }
 }

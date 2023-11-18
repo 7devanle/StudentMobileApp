@@ -6,8 +6,6 @@ import androidx.room.PrimaryKey;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity(tableName = "admins")
 public class Admin {

@@ -1,4 +1,4 @@
-package com.example.studentregistrationapp.repository;
+package com.example.studentregistrationapp.data.repository;
 
 import android.app.Application;
 import android.os.AsyncTask;
