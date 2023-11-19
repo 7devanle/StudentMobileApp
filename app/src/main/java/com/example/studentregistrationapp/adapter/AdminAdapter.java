@@ -2,6 +2,7 @@ package com.example.studentregistrationapp.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.studentregistrationapp.R;
 import com.example.studentregistrationapp.data.model.Student;
 import com.example.studentregistrationapp.data.viewModel.AdminViewModel;
+import com.example.studentregistrationapp.databinding.ActivityViewAllStudentsBinding;
 
 import java.util.List;
 
@@ -17,6 +19,7 @@ public class AdminAdapter extends RecyclerView.Adapter<AdminViewHolder> {
 
     Context context;
     List<Student> students;
+    ActivityViewAllStudentsBinding binding;
 
     public AdminAdapter(Context context, AdminViewModel adminViewModel) {
         this.context = context;

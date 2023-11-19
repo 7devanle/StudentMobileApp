@@ -14,8 +14,8 @@ public class AdminViewHolder extends RecyclerView.ViewHolder {
     ActivityViewAllStudentsBinding binding;
     ImageView imageView;
     TextView nameView, locationView, departmentView, facultyView;
-    public AdminViewHolder(@NonNull View itemView) {
-        super(itemView);
+    public AdminViewHolder(@NonNull View studentView) {
+        super(studentView);
         imageView = binding.image;
         nameView = binding.name;
         locationView = binding.location;
