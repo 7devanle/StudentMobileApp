@@ -41,7 +41,7 @@ public interface StudentRepo {
     LiveData<Student> searchStudent(String query);
 
     @Query("SELECT * FROM students WHERE student_id = :id LIMIT 1")
-    LiveData<Student> getStudent(Long id);
+    LiveData<Student> getStudent(int id);
 
 
 }

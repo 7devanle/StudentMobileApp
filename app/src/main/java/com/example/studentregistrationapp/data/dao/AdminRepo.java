@@ -31,6 +31,6 @@ public interface AdminRepo {
     LiveData<Admin> getAdmin(String admin_name);
 
     @Query("SELECT * FROM admins WHERE admin_ids = :id LIMIT 1")
-    LiveData<Admin> getAdmin(Long id);
+    LiveData<Admin> getAdmin(int id);
 
 }

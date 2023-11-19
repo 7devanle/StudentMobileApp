@@ -19,8 +19,9 @@ public class AdminRepository {
 
     public AdminRepository(Application application){
         AdminDatabase adminDatabase = AdminDatabase.getInstance(application);
-        adminRepo=adminDatabase.adminRepo();
         studentRepo= adminDatabase.studentRepo();
+        adminRepo=adminDatabase.adminRepo();
+
     }
 
     public void insertAdmin(Admin admin){
@@ -30,9 +31,9 @@ public class AdminRepository {
     public String login(Admin admin){
         Admin availableAdmin = adminRepo.getAdmin(admin.getUsername()).getValue();
         if(availableAdmin!= null && admin.getPassword() == availableAdmin.getPassword()){
-            return "Welcome "+ admin.getUsername();
+            return "logged";
         }
-        return "details incorrect";
+        return "incorrect";
     }
 
     public void update(Admin admin) {
@@ -47,7 +48,7 @@ public class AdminRepository {
         return adminRepo.getAdmin(admin_name);
     }
 
-    public LiveData<Admin> getAdmin(Long adminId) {
+    public LiveData<Admin> getAdmin(int adminId) {
         return adminRepo.getAdmin(adminId);
     }
 
@@ -87,7 +88,7 @@ public class AdminRepository {
         return studentRepo.searchStudent(query);
     }
 
-    public LiveData<Student> getStudent(Long id) {
+    public LiveData<Student> getStudent(int id) {
         return studentRepo.getStudent(id);
     }
 

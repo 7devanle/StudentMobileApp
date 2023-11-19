@@ -2,15 +2,11 @@ package com.example.studentregistrationapp.data.model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.ForeignKey;
 import androidx.room.Ignore;
-import androidx.room.Junction;
 import androidx.room.PrimaryKey;
-import androidx.room.Relation;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,17 +16,18 @@ import java.util.List;
 public class Student {
 
     private static List<Course> courses = new ArrayList<>();
+
     @NotNull
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "student_id")
-    private long id;
+    private int id;
     @NotNull
     @ColumnInfo(name = "mat")
     private String matNo;
     @NotNull
     @ColumnInfo(name = "name")
     private String name;
-//    private File photo;
+    private int photo;
     private String location;
     @NotNull
     private String department;
@@ -39,11 +36,11 @@ public class Student {
 
     private Boolean blackListed;
 
-    public Student(String name, String location, String department, String faculty) {
+    public Student(String name, String location, int photo, String department, String faculty) {
         this.matNo = "SOOL"+getId();
         this.name = name;
         this.location = location;
-//        this.photo = null;
+        this.photo = photo;
         this.department = department;
         this.faculty = faculty;
 //        this.courses = new ArrayList<Course>();
@@ -51,12 +48,12 @@ public class Student {
     }
 
     @Ignore
-    public Student(long id, String name, String location, String department, String faculty) {
+    public Student(int id, String name, int photo, String location, String department, String faculty) {
         this.id=id;
         this.matNo = "SOOL"+getId();
         this.name = name;
         this.location = location;
-//        this.photo = null;
+        this.photo = photo;
         this.department = department;
         this.faculty = faculty;
 //        this.courses = new ArrayList<Course>();
@@ -69,9 +66,10 @@ public class Student {
             this.blackListed = true;
     }
 
-    private long getId(){
-        return this.id;
+    public int getId() {
+        return id;
     }
+
     public String getMatNo() {
         return this.matNo;
     }
@@ -88,13 +86,13 @@ public class Student {
         this.name = name;
     }
 
-//    public File getPhoto() {
-//        return photo;
-//    }
+    public int getPhoto() {
+        return this.photo;
+    }
 
-//    public void setPhoto(File photo) {
-//        this.photo = photo;
-//    }
+    public void setPhoto(int photo) {
+        this.photo = photo;
+    }
 
     public String getLocation() {
         return location;
@@ -143,7 +141,7 @@ public class Student {
         }
         return "Course wasn't formally registered";
     }
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

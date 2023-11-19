@@ -12,7 +12,7 @@ public class Admin {
     @NotNull
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "admin_ids")
-    private Long id;
+    private int id;
     @NotNull
     @ColumnInfo(name = "username")
     private String username;
@@ -26,11 +26,11 @@ public class Admin {
     }
 
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

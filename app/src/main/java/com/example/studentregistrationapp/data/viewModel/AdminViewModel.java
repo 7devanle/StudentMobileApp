@@ -35,7 +35,7 @@ public class AdminViewModel extends AndroidViewModel {
         return adminRepository.getAdmin(admin_name);
     }
 
-    public LiveData<Admin> getAdmin(Long adminId) {
+    public LiveData<Admin> getAdmin(int adminId) {
         return adminRepository.getAdmin(adminId);
     }
 
@@ -75,7 +75,7 @@ public class AdminViewModel extends AndroidViewModel {
         return adminRepository.searchStudent(query);
     }
 
-    public LiveData<Student> getStudent(Long id) {
+    public LiveData<Student> getStudent(int id) {
         return adminRepository.getStudent(id);
     }
 
